@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="generator" content=
+"HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org">
+<meta http-equiv="Content-Type" content=
+"text/html; charset=us-ascii">
+<title>Chapter&nbsp;43.&nbsp;GSP Firmware</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<link rel="start" href="index.html" title=
+"NVIDIA Accelerated Linux Graphics Driver README and Installation Guide">
+<link rel="up" href="installationandconfiguration.html" title=
+"Part&nbsp;I.&nbsp;Installation and Configuration Instructions">
+<link rel="prev" href="nvidia-peermem.html" title=
+"Chapter&nbsp;42.&nbsp;GPUDirect RDMA Peer Memory Client">
+<link rel="next" href="kernel_open.html" title=
+"Chapter&nbsp;44.&nbsp;Open Linux Kernel Modules">
+</head>
+<body>
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr>
+<th colspan="3" align="center">Chapter&nbsp;43.&nbsp;GSP
+Firmware</th>
+</tr>
+<tr>
+<td width="20%" align="left"><a accesskey="p" href=
+"nvidia-peermem.html">Prev</a>&nbsp;</td>
+<th width="60%" align="center">Part&nbsp;I.&nbsp;Installation and
+Configuration Instructions</th>
+<td width="20%" align="right">&nbsp;<a accesskey="n" href=
+"kernel_open.html">Next</a></td>
+</tr>
+</table>
+<hr></div>
+<div class="chapter" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a name="gsp" id=
+"gsp"></a>Chapter&nbsp;43.&nbsp;GSP Firmware</h2>
+</div>
+</div>
+</div>
+<p>Some GPUs include a GPU System Processor (GSP) which can be used
+to offload GPU initialization and management tasks. This processor
+is driven by the <code class="filename">gsp_*.bin</code> firmware
+files under <code class=
+"filename">/lib/firmware/nvidia/550.144.03/</code>. Each GSP
+firmware file is named after a GPU architecture (for example,
+<code class="filename">gsp_tu10x.bin</code> is named after Turing)
+and supports GPUs from one or more architectures. A few select
+products currently use GSP by default, and more products will take
+advantage of GSP in future driver releases.</p>
+<p>Offloading tasks which were traditionally performed by the
+driver on the CPU can improve performance due to lower latency
+access to GPU hardware internals.</p>
+<h3>Query Mode</h3>
+<p>The nvidia-smi utility can be used to query the current use of
+GSP firmware. It will display a valid version if GSP firmware is
+enabled, or &ldquo;<span class="quote">N/A</span>&rdquo; if
+disabled:</p>
+<pre class="screen">
+    $ nvidia-smi -q
+    ...
+       GSP Firmware Version                  : 550.144.03
+    ...
+</pre>
+<p>This information is also present in the per-GPU information file
+in the <code class="filename">/proc</code> file system.</p>
+<pre class="screen">
+    $ cat /proc/driver/nvidia/gpus/domain:bus:device.function/information
+    ...
+       GSP Firmware:    550.144.03
+</pre>
+<p></p>
+<h3>Disabling GSP Mode</h3>
+<p>The driver can be forced to disable use of GSP firmware by
+setting the kernel module parameter NVreg_EnableGpuFirmware=0.</p>
+<h3>Enabling GSP Mode</h3>
+<p>Turing and later GPUs are capable of using the GSP firmware by
+setting the kernel module parameter NVreg_EnableGpuFirmware=1.
+However, note feature and GPU support limitations below.</p>
+<h3>Supported GPUs</h3>
+<p>The following GPUs default to using the GSP firmware:</p>
+<div class="informaltable">
+<table summary="(no summary available)" border="1">
+<colgroup>
+<col>
+<col></colgroup>
+<thead>
+<tr>
+<th>NVIDIA GPU product</th>
+<th>Device PCI ID *</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tesla T10</td>
+<td>1E37 10DE 1370</td>
+</tr>
+<tr>
+<td>NVIDIA T4G</td>
+<td>1EB4 10DE 157D</td>
+</tr>
+<tr>
+<td>Tesla T4</td>
+<td>1EB8</td>
+</tr>
+<tr>
+<td>NVIDIA T4 32GB</td>
+<td>1EB9</td>
+</tr>
+<tr>
+<td>NVIDIA A100-PG509-200</td>
+<td>20B0 10DE 1450</td>
+</tr>
+<tr>
+<td>NVIDIA A100-SXM4-40GB</td>
+<td>20B0</td>
+</tr>
+<tr>
+<td>NVIDIA A100-PCIE-40GB</td>
+<td>20B1 10DE 145F</td>
+</tr>
+<tr>
+<td>NVIDIA A100-SXM4-80GB</td>
+<td>20B2 10DE 1463</td>
+</tr>
+<tr>
+<td>NVIDIA A100-SXM4-80GB</td>
+<td>20B2 10DE 147F</td>
+</tr>
+<tr>
+<td>NVIDIA A100-SXM4-80GB</td>
+<td>20B2 10DE 1484</td>
+</tr>
+<tr>
+<td>NVIDIA PG506-242</td>
+<td>20B3 10DE 14A7</td>
+</tr>
+<tr>
+<td>NVIDIA PG506-243</td>
+<td>20B3 10DE 14A8</td>
+</tr>
+<tr>
+<td>NVIDIA A100-PCIE-80GB</td>
+<td>20B5 10DE 1533</td>
+</tr>
+<tr>
+<td>NVIDIA PG506-230</td>
+<td>20B6 10DE 1491</td>
+</tr>
+<tr>
+<td>NVIDIA PG506-232</td>
+<td>20B6 10DE 1492</td>
+</tr>
+<tr>
+<td>NVIDIA A30</td>
+<td>20B7 10DE 1532</td>
+</tr>
+<tr>
+<td>NVIDIA A100-PG506-207</td>
+<td>20F0 10DE 1583</td>
+</tr>
+<tr>
+<td>NVIDIA A100-PCIE-40GB</td>
+<td>20F1 10DE 145F</td>
+</tr>
+<tr>
+<td>NVIDIA A100-PG506-217</td>
+<td>20F2 10DE 1584</td>
+</tr>
+<tr>
+<td>NVIDIA A40</td>
+<td>2235 10DE 145A</td>
+</tr>
+<tr>
+<td>NVIDIA A10</td>
+<td>2236</td>
+</tr>
+<tr>
+<td>NVIDIA A10G</td>
+<td>2237</td>
+</tr>
+<tr>
+<td>NVIDIA A16</td>
+<td>25B6 10DE 14A9</td>
+</tr>
+<tr>
+<td>NVIDIA A2</td>
+<td>25B6 10DE 157E</td>
+</tr>
+<tr>
+<td>NVIDIA A800-80</td>
+<td>20F5</td>
+</tr>
+<tr>
+<td>NVIDIA A800-40</td>
+<td>20F6</td>
+</tr>
+<tr>
+<td>NVIDIA L40</td>
+<td>26B5</td>
+</tr>
+<tr>
+<td>NVIDIA L40G</td>
+<td>26B8</td>
+</tr>
+<tr>
+<td>NVIDIA L4</td>
+<td>27B8</td>
+</tr>
+<tr>
+<td>NVIDIA H100 NVL</td>
+<td>2321 10DE 1839</td>
+</tr>
+<tr>
+<td>NVIDIA H800 PCIe</td>
+<td>2322 10DE 17A4</td>
+</tr>
+<tr>
+<td>NVIDIA H800</td>
+<td>2324</td>
+</tr>
+<tr>
+<td>NVIDIA H800 NVL</td>
+<td>233A 10DE 183A</td>
+</tr>
+<tr>
+<td>NVIDIA H100 80GB HBM3</td>
+<td>2330</td>
+</tr>
+<tr>
+<td>NVIDIA H100 PCIe</td>
+<td>2331 10DE 1626</td>
+</tr>
+<tr>
+<td>NVIDIA H100</td>
+<td>2339</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>* If three IDs are listed, the first is the PCI Device ID, the
+second is the PCI Subsystem Vendor ID, and the third is the PCI
+Subsystem Device ID.</p>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left"><a accesskey="p" href=
+"nvidia-peermem.html">Prev</a>&nbsp;</td>
+<td width="20%" align="center"><a accesskey="u" href=
+"installationandconfiguration.html">Up</a></td>
+<td width="40%" align="right">&nbsp;<a accesskey="n" href=
+"kernel_open.html">Next</a></td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">
+Chapter&nbsp;42.&nbsp;GPUDirect RDMA Peer Memory Client&nbsp;</td>
+<td width="20%" align="center"><a accesskey="h" href=
+"index.html">Home</a></td>
+<td width="40%" align="right" valign="top">
+&nbsp;Chapter&nbsp;44.&nbsp;Open Linux Kernel Modules</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

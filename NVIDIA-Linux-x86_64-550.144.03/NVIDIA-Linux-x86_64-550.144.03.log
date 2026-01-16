@@ -1,0 +1,1131 @@
+$ tree -a ./NVIDIA-Linux-x86_64-550.144.03
+./NVIDIA-Linux-x86_64-550.144.03
+├── .manifest
+├── 10_nvidia.json
+├── 10_nvidia_wayland.json
+├── 15_nvidia_gbm.json
+├── 32
+│   ├── libEGL.so.1.1.0
+│   ├── libEGL_nvidia.so.550.144.03
+│   ├── libGL.so.1.7.0
+│   ├── libGLESv1_CM.so.1.2.0
+│   ├── libGLESv1_CM_nvidia.so.550.144.03
+│   ├── libGLESv2.so.2.1.0
+│   ├── libGLESv2_nvidia.so.550.144.03
+│   ├── libGLX.so.0
+│   ├── libGLX_nvidia.so.550.144.03
+│   ├── libGLdispatch.so.0
+│   ├── libOpenCL.so.1.0.0
+│   ├── libOpenGL.so.0
+│   ├── libcuda.so.550.144.03
+│   ├── libglvnd_install_checker
+│   │   ├── glvnd_check
+│   │   └── libGLX_installcheck.so.0
+│   ├── libnvcuvid.so.550.144.03
+│   ├── libnvidia-allocator.so.550.144.03
+│   ├── libnvidia-eglcore.so.550.144.03
+│   ├── libnvidia-encode.so.550.144.03
+│   ├── libnvidia-fbc.so.550.144.03
+│   ├── libnvidia-glcore.so.550.144.03
+│   ├── libnvidia-glsi.so.550.144.03
+│   ├── libnvidia-glvkspirv.so.550.144.03
+│   ├── libnvidia-gpucomp.so.550.144.03
+│   ├── libnvidia-ml.so.550.144.03
+│   ├── libnvidia-nvvm.so.550.144.03
+│   ├── libnvidia-opencl.so.550.144.03
+│   ├── libnvidia-opticalflow.so.550.144.03
+│   ├── libnvidia-ptxjitcompiler.so.550.144.03
+│   ├── libnvidia-tls.so.550.144.03
+│   └── libvdpau_nvidia.so.550.144.03
+├── LICENSE
+├── NVIDIA_Changelog
+├── README.txt
+├── _nvngx.dll
+├── firmware
+│   ├── gsp_ga10x.bin
+│   └── gsp_tu10x.bin
+├── html
+│   ├── acknowledgements.html
+│   ├── addressingcapabilities.html
+│   ├── addtlresources.html
+│   ├── appendices.html
+│   ├── audiosupport.html
+│   ├── commonproblems.html
+│   ├── configlaptop.html
+│   ├── configmultxscreens.html
+│   ├── configtwinview.html
+│   ├── depth30.html
+│   ├── displaydevicenames.html
+│   ├── dma_issues.html
+│   ├── dpi.html
+│   ├── dynamicboost.html
+│   ├── dynamicpowermanagement.html
+│   ├── editxconfig.html
+│   ├── egpu.html
+│   ├── faq.html
+│   ├── flippingubb.html
+│   ├── framelock.html
+│   ├── gbm.html
+│   ├── glxsupport.html
+│   ├── gpunames.html
+│   ├── gsp.html
+│   ├── i2c.html
+│   ├── index.html
+│   ├── installationandconfiguration.html
+│   ├── installdriver.html
+│   ├── installedcomponents.html
+│   ├── introduction.html
+│   ├── kernel_open.html
+│   ├── kms.html
+│   ├── knownissues.html
+│   ├── minimumrequirements.html
+│   ├── newusertips.html
+│   ├── ngx.html
+│   ├── nvidia-debugdump.html
+│   ├── nvidia-ml.html
+│   ├── nvidia-peermem.html
+│   ├── nvidia-persistenced.html
+│   ├── nvidia-smi.html
+│   ├── nvidiasettings.html
+│   ├── openglenvvariables.html
+│   ├── optimus.html
+│   ├── powermanagement.html
+│   ├── primerenderoffload.html
+│   ├── procinterface.html
+│   ├── profiles.html
+│   ├── programmingmodes.html
+│   ├── randr14.html
+│   ├── retpoline.html
+│   ├── selectdriver.html
+│   ├── sli.html
+│   ├── supportedchips.html
+│   ├── vdpausupport.html
+│   ├── wayland-issues.html
+│   ├── xcompositeextension.html
+│   ├── xconfigoptions.html
+│   ├── xineramaglx.html
+│   ├── xrandrextension.html
+│   └── xwayland.html
+├── kernel
+│   ├── Kbuild
+│   ├── Makefile
+│   ├── common
+│   │   └── inc
+│   │       ├── conftest.h
+│   │       ├── cpuopsys.h
+│   │       ├── nv-caps.h
+│   │       ├── nv-chardev-numbers.h
+│   │       ├── nv-dmabuf.h
+│   │       ├── nv-firmware-registry.h
+│   │       ├── nv-firmware.h
+│   │       ├── nv-gpu-info.h
+│   │       ├── nv-hash.h
+│   │       ├── nv-hypervisor.h
+│   │       ├── nv-ioctl-numa.h
+│   │       ├── nv-ioctl-numbers.h
+│   │       ├── nv-ioctl.h
+│   │       ├── nv-kernel-interface-api.h
+│   │       ├── nv-kref.h
+│   │       ├── nv-kthread-q-os.h
+│   │       ├── nv-kthread-q.h
+│   │       ├── nv-linux.h
+│   │       ├── nv-list-helpers.h
+│   │       ├── nv-lock.h
+│   │       ├── nv-memdbg.h
+│   │       ├── nv-mm.h
+│   │       ├── nv-modeset-interface.h
+│   │       ├── nv-msi.h
+│   │       ├── nv-pci-types.h
+│   │       ├── nv-pci.h
+│   │       ├── nv-pgprot.h
+│   │       ├── nv-procfs-utils.h
+│   │       ├── nv-procfs.h
+│   │       ├── nv-proto.h
+│   │       ├── nv-retpoline.h
+│   │       ├── nv-time.h
+│   │       ├── nv-timer.h
+│   │       ├── nv.h
+│   │       ├── nvCpuUuid.h
+│   │       ├── nv_speculation_barrier.h
+│   │       ├── nv_stdarg.h
+│   │       ├── nv_uvm_interface.h
+│   │       ├── nv_uvm_types.h
+│   │       ├── nvgputypes.h
+│   │       ├── nvkms-api-types.h
+│   │       ├── nvkms-format.h
+│   │       ├── nvkms-kapi.h
+│   │       ├── nvlimits.h
+│   │       ├── nvmisc.h
+│   │       ├── nvstatus.h
+│   │       ├── nvstatuscodes.h
+│   │       ├── nvtypes.h
+│   │       ├── os
+│   │       │   └── nv_memory_type.h
+│   │       ├── os-interface.h
+│   │       └── rm-gpu-ops.h
+│   ├── conftest.sh
+│   ├── count-lines.mk
+│   ├── dkms.conf
+│   ├── header-presence-tests.mk
+│   ├── nvidia
+│   │   ├── detect-self-hosted.h
+│   │   ├── export_nvswitch.h
+│   │   ├── hal
+│   │   │   └── library
+│   │   │       └── cryptlib
+│   │   │           ├── cryptlib_aead.h
+│   │   │           ├── cryptlib_cert.h
+│   │   │           ├── cryptlib_dh.h
+│   │   │           ├── cryptlib_ec.h
+│   │   │           ├── cryptlib_ecd.h
+│   │   │           ├── cryptlib_hash.h
+│   │   │           ├── cryptlib_hkdf.h
+│   │   │           ├── cryptlib_mac.h
+│   │   │           ├── cryptlib_rng.h
+│   │   │           ├── cryptlib_rsa.h
+│   │   │           └── cryptlib_sm2.h
+│   │   ├── i2c_nvswitch.c
+│   │   ├── internal
+│   │   │   └── libspdm_lib_config.h
+│   │   ├── internal_crypt_lib.h
+│   │   ├── ioctl_common_nvswitch.h
+│   │   ├── ioctl_nvswitch.h
+│   │   ├── library
+│   │   │   ├── cryptlib.h
+│   │   │   └── spdm_lib_config.h
+│   │   ├── libspdm_aead.c
+│   │   ├── libspdm_aead_aes_gcm.c
+│   │   ├── libspdm_ec.c
+│   │   ├── libspdm_ecc.c
+│   │   ├── libspdm_hkdf.c
+│   │   ├── libspdm_hkdf_sha.c
+│   │   ├── libspdm_hmac_sha.c
+│   │   ├── libspdm_internal_crypt_lib.c
+│   │   ├── libspdm_rand.c
+│   │   ├── libspdm_rsa.c
+│   │   ├── libspdm_rsa_ext.c
+│   │   ├── libspdm_sha.c
+│   │   ├── libspdm_shash.c
+│   │   ├── libspdm_x509.c
+│   │   ├── linux_nvswitch.c
+│   │   ├── linux_nvswitch.h
+│   │   ├── nv-acpi.c
+│   │   ├── nv-caps-imex.c
+│   │   ├── nv-caps-imex.h
+│   │   ├── nv-caps.c
+│   │   ├── nv-cray.c
+│   │   ├── nv-dma.c
+│   │   ├── nv-dmabuf.c
+│   │   ├── nv-i2c.c
+│   │   ├── nv-ibmnpu.c
+│   │   ├── nv-ibmnpu.h
+│   │   ├── nv-kernel.o_binary
+│   │   ├── nv-kthread-q.c
+│   │   ├── nv-memdbg.c
+│   │   ├── nv-mmap.c
+│   │   ├── nv-modeset-interface.c
+│   │   ├── nv-msi.c
+│   │   ├── nv-nano-timer.c
+│   │   ├── nv-p2p.c
+│   │   ├── nv-p2p.h
+│   │   ├── nv-pat.c
+│   │   ├── nv-pat.h
+│   │   ├── nv-pci-table.c
+│   │   ├── nv-pci-table.h
+│   │   ├── nv-pci.c
+│   │   ├── nv-procfs.c
+│   │   ├── nv-reg.h
+│   │   ├── nv-report-err.c
+│   │   ├── nv-report-err.h
+│   │   ├── nv-rsync.c
+│   │   ├── nv-rsync.h
+│   │   ├── nv-usermap.c
+│   │   ├── nv-vm.c
+│   │   ├── nv-vtophys.c
+│   │   ├── nv.c
+│   │   ├── nv_gpu_ops.h
+│   │   ├── nv_uvm_interface.c
+│   │   ├── nvidia-sources.Kbuild
+│   │   ├── nvidia.Kbuild
+│   │   ├── nvlink_caps.c
+│   │   ├── nvlink_caps.h
+│   │   ├── nvlink_common.h
+│   │   ├── nvlink_errors.h
+│   │   ├── nvlink_export.h
+│   │   ├── nvlink_linux.c
+│   │   ├── nvlink_linux.h
+│   │   ├── nvlink_os.h
+│   │   ├── nvlink_pci.h
+│   │   ├── nvlink_proto.h
+│   │   ├── nvspdm_cryptlib_extensions.h
+│   │   ├── os-interface.c
+│   │   ├── os-mlock.c
+│   │   ├── os-pci.c
+│   │   ├── os-registry.c
+│   │   ├── os-usermap.c
+│   │   ├── procfs_nvswitch.c
+│   │   └── rmp2pdefines.h
+│   ├── nvidia-drm
+│   │   ├── nv-kthread-q.c
+│   │   ├── nv-pci-table.c
+│   │   ├── nv-pci-table.h
+│   │   ├── nvidia-dma-fence-helper.h
+│   │   ├── nvidia-dma-resv-helper.h
+│   │   ├── nvidia-drm-conftest.h
+│   │   ├── nvidia-drm-connector.c
+│   │   ├── nvidia-drm-connector.h
+│   │   ├── nvidia-drm-crtc.c
+│   │   ├── nvidia-drm-crtc.h
+│   │   ├── nvidia-drm-drv.c
+│   │   ├── nvidia-drm-drv.h
+│   │   ├── nvidia-drm-encoder.c
+│   │   ├── nvidia-drm-encoder.h
+│   │   ├── nvidia-drm-fb.c
+│   │   ├── nvidia-drm-fb.h
+│   │   ├── nvidia-drm-fence.c
+│   │   ├── nvidia-drm-fence.h
+│   │   ├── nvidia-drm-format.c
+│   │   ├── nvidia-drm-format.h
+│   │   ├── nvidia-drm-gem-dma-buf.c
+│   │   ├── nvidia-drm-gem-dma-buf.h
+│   │   ├── nvidia-drm-gem-nvkms-memory.c
+│   │   ├── nvidia-drm-gem-nvkms-memory.h
+│   │   ├── nvidia-drm-gem-user-memory.c
+│   │   ├── nvidia-drm-gem-user-memory.h
+│   │   ├── nvidia-drm-gem.c
+│   │   ├── nvidia-drm-gem.h
+│   │   ├── nvidia-drm-helper.c
+│   │   ├── nvidia-drm-helper.h
+│   │   ├── nvidia-drm-ioctl.h
+│   │   ├── nvidia-drm-linux.c
+│   │   ├── nvidia-drm-modeset.c
+│   │   ├── nvidia-drm-modeset.h
+│   │   ├── nvidia-drm-os-interface.c
+│   │   ├── nvidia-drm-os-interface.h
+│   │   ├── nvidia-drm-priv.h
+│   │   ├── nvidia-drm-sources.mk
+│   │   ├── nvidia-drm-utils.c
+│   │   ├── nvidia-drm-utils.h
+│   │   ├── nvidia-drm.Kbuild
+│   │   ├── nvidia-drm.c
+│   │   └── nvidia-drm.h
+│   ├── nvidia-modeset
+│   │   ├── nv-kthread-q.c
+│   │   ├── nv-modeset-kernel.o_binary
+│   │   ├── nvidia-modeset-linux.c
+│   │   ├── nvidia-modeset-os-interface.h
+│   │   ├── nvidia-modeset.Kbuild
+│   │   ├── nvkms-ioctl.h
+│   │   └── nvkms.h
+│   ├── nvidia-peermem
+│   │   ├── nv-p2p.h
+│   │   ├── nvidia-peermem.Kbuild
+│   │   ├── nvidia-peermem.c
+│   │   └── peer_mem.h
+│   └── nvidia-uvm
+│       ├── cla06fsubch.h
+│       ├── cla16f.h
+│       ├── clb069.h
+│       ├── clb06f.h
+│       ├── clb0b5.h
+│       ├── clc06f.h
+│       ├── clc076.h
+│       ├── clc0b5.h
+│       ├── clc1b5.h
+│       ├── clc365.h
+│       ├── clc369.h
+│       ├── clc36f.h
+│       ├── clc3b5.h
+│       ├── clc46f.h
+│       ├── clc56f.h
+│       ├── clc5b5.h
+│       ├── clc6b5.h
+│       ├── clc7b5.h
+│       ├── clc86f.h
+│       ├── clc8b5.h
+│       ├── clcba2.h
+│       ├── ctrl2080mc.h
+│       ├── hwref
+│       │   ├── ampere
+│       │   │   └── ga100
+│       │   │       ├── dev_fault.h
+│       │   │       └── dev_runlist.h
+│       │   ├── hopper
+│       │   │   └── gh100
+│       │   │       ├── dev_fault.h
+│       │   │       └── dev_mmu.h
+│       │   ├── maxwell
+│       │   │   └── gm107
+│       │   │       └── dev_mmu.h
+│       │   ├── pascal
+│       │   │   └── gp100
+│       │   │       ├── dev_fault.h
+│       │   │       ├── dev_fb.h
+│       │   │       └── dev_mmu.h
+│       │   ├── turing
+│       │   │   └── tu102
+│       │   │       ├── dev_fault.h
+│       │   │       └── dev_mmu.h
+│       │   └── volta
+│       │       └── gv100
+│       │           ├── dev_fault.h
+│       │           ├── dev_fb.h
+│       │           └── dev_mmu.h
+│       ├── nv-kthread-q-selftest.c
+│       ├── nv-kthread-q.c
+│       ├── nvCpuUuid.c
+│       ├── nvidia-uvm-sources.Kbuild
+│       ├── nvidia-uvm.Kbuild
+│       ├── nvstatus.c
+│       ├── uvm.c
+│       ├── uvm.h
+│       ├── uvm_ada.c
+│       ├── uvm_ada_fault_buffer.h
+│       ├── uvm_ampere.c
+│       ├── uvm_ampere_ce.c
+│       ├── uvm_ampere_fault_buffer.h
+│       ├── uvm_ampere_host.c
+│       ├── uvm_ampere_mmu.c
+│       ├── uvm_api.h
+│       ├── uvm_ats.c
+│       ├── uvm_ats.h
+│       ├── uvm_ats_faults.c
+│       ├── uvm_ats_faults.h
+│       ├── uvm_ats_ibm.c
+│       ├── uvm_ats_ibm.h
+│       ├── uvm_ats_sva.c
+│       ├── uvm_ats_sva.h
+│       ├── uvm_ce_test.c
+│       ├── uvm_channel.c
+│       ├── uvm_channel.h
+│       ├── uvm_channel_test.c
+│       ├── uvm_common.c
+│       ├── uvm_common.h
+│       ├── uvm_conf_computing.c
+│       ├── uvm_conf_computing.h
+│       ├── uvm_extern_decl.h
+│       ├── uvm_fault_buffer_flush_test.c
+│       ├── uvm_forward_decl.h
+│       ├── uvm_get_rm_ptes_test.c
+│       ├── uvm_global.c
+│       ├── uvm_global.h
+│       ├── uvm_gpu.c
+│       ├── uvm_gpu.h
+│       ├── uvm_gpu_access_counters.c
+│       ├── uvm_gpu_access_counters.h
+│       ├── uvm_gpu_isr.c
+│       ├── uvm_gpu_isr.h
+│       ├── uvm_gpu_non_replayable_faults.c
+│       ├── uvm_gpu_non_replayable_faults.h
+│       ├── uvm_gpu_replayable_faults.c
+│       ├── uvm_gpu_replayable_faults.h
+│       ├── uvm_gpu_semaphore.c
+│       ├── uvm_gpu_semaphore.h
+│       ├── uvm_gpu_semaphore_test.c
+│       ├── uvm_hal.c
+│       ├── uvm_hal.h
+│       ├── uvm_hal_types.h
+│       ├── uvm_hmm.c
+│       ├── uvm_hmm.h
+│       ├── uvm_hopper.c
+│       ├── uvm_hopper_ce.c
+│       ├── uvm_hopper_fault_buffer.c
+│       ├── uvm_hopper_fault_buffer.h
+│       ├── uvm_hopper_host.c
+│       ├── uvm_hopper_mmu.c
+│       ├── uvm_hopper_sec2.c
+│       ├── uvm_host_test.c
+│       ├── uvm_ioctl.h
+│       ├── uvm_kvmalloc.c
+│       ├── uvm_kvmalloc.h
+│       ├── uvm_kvmalloc_test.c
+│       ├── uvm_linux.c
+│       ├── uvm_linux.h
+│       ├── uvm_linux_ioctl.h
+│       ├── uvm_lock.c
+│       ├── uvm_lock.h
+│       ├── uvm_lock_test.c
+│       ├── uvm_map_external.c
+│       ├── uvm_map_external.h
+│       ├── uvm_maxwell.c
+│       ├── uvm_maxwell_access_counter_buffer.c
+│       ├── uvm_maxwell_ce.c
+│       ├── uvm_maxwell_fault_buffer.c
+│       ├── uvm_maxwell_host.c
+│       ├── uvm_maxwell_mmu.c
+│       ├── uvm_maxwell_sec2.c
+│       ├── uvm_mem.c
+│       ├── uvm_mem.h
+│       ├── uvm_mem_test.c
+│       ├── uvm_migrate.c
+│       ├── uvm_migrate.h
+│       ├── uvm_migrate_pageable.c
+│       ├── uvm_migrate_pageable.h
+│       ├── uvm_mmu.c
+│       ├── uvm_mmu.h
+│       ├── uvm_page_tree_test.c
+│       ├── uvm_pascal.c
+│       ├── uvm_pascal_ce.c
+│       ├── uvm_pascal_fault_buffer.c
+│       ├── uvm_pascal_fault_buffer.h
+│       ├── uvm_pascal_host.c
+│       ├── uvm_pascal_mmu.c
+│       ├── uvm_peer_identity_mappings_test.c
+│       ├── uvm_perf_events.c
+│       ├── uvm_perf_events.h
+│       ├── uvm_perf_events_test.c
+│       ├── uvm_perf_heuristics.c
+│       ├── uvm_perf_heuristics.h
+│       ├── uvm_perf_module.c
+│       ├── uvm_perf_module.h
+│       ├── uvm_perf_module_test.c
+│       ├── uvm_perf_prefetch.c
+│       ├── uvm_perf_prefetch.h
+│       ├── uvm_perf_thrashing.c
+│       ├── uvm_perf_thrashing.h
+│       ├── uvm_perf_utils.c
+│       ├── uvm_perf_utils.h
+│       ├── uvm_perf_utils_test.c
+│       ├── uvm_pmm_gpu.c
+│       ├── uvm_pmm_gpu.h
+│       ├── uvm_pmm_sysmem.c
+│       ├── uvm_pmm_sysmem.h
+│       ├── uvm_pmm_sysmem_test.c
+│       ├── uvm_pmm_test.c
+│       ├── uvm_policy.c
+│       ├── uvm_populate_pageable.c
+│       ├── uvm_populate_pageable.h
+│       ├── uvm_processors.c
+│       ├── uvm_processors.h
+│       ├── uvm_procfs.c
+│       ├── uvm_procfs.h
+│       ├── uvm_pte_batch.c
+│       ├── uvm_pte_batch.h
+│       ├── uvm_push.c
+│       ├── uvm_push.h
+│       ├── uvm_push_macros.h
+│       ├── uvm_push_test.c
+│       ├── uvm_pushbuffer.c
+│       ├── uvm_pushbuffer.h
+│       ├── uvm_range_allocator.c
+│       ├── uvm_range_allocator.h
+│       ├── uvm_range_allocator_test.c
+│       ├── uvm_range_group.c
+│       ├── uvm_range_group.h
+│       ├── uvm_range_group_tree_test.c
+│       ├── uvm_range_tree.c
+│       ├── uvm_range_tree.h
+│       ├── uvm_range_tree_test.c
+│       ├── uvm_rb_tree.c
+│       ├── uvm_rb_tree.h
+│       ├── uvm_rb_tree_test.c
+│       ├── uvm_rm_mem.c
+│       ├── uvm_rm_mem.h
+│       ├── uvm_rm_mem_test.c
+│       ├── uvm_sec2_test.c
+│       ├── uvm_test.c
+│       ├── uvm_test.h
+│       ├── uvm_test_ioctl.h
+│       ├── uvm_test_rng.c
+│       ├── uvm_test_rng.h
+│       ├── uvm_thread_context.c
+│       ├── uvm_thread_context.h
+│       ├── uvm_thread_context_test.c
+│       ├── uvm_tlb_batch.c
+│       ├── uvm_tlb_batch.h
+│       ├── uvm_tools.c
+│       ├── uvm_tools.h
+│       ├── uvm_tools_init.h
+│       ├── uvm_tracker.c
+│       ├── uvm_tracker.h
+│       ├── uvm_tracker_test.c
+│       ├── uvm_turing.c
+│       ├── uvm_turing_access_counter_buffer.c
+│       ├── uvm_turing_fault_buffer.c
+│       ├── uvm_turing_fault_buffer.h
+│       ├── uvm_turing_host.c
+│       ├── uvm_turing_mmu.c
+│       ├── uvm_types.h
+│       ├── uvm_unit_test.h
+│       ├── uvm_user_channel.c
+│       ├── uvm_user_channel.h
+│       ├── uvm_va_block.c
+│       ├── uvm_va_block.h
+│       ├── uvm_va_block_test.c
+│       ├── uvm_va_block_types.h
+│       ├── uvm_va_policy.c
+│       ├── uvm_va_policy.h
+│       ├── uvm_va_range.c
+│       ├── uvm_va_range.h
+│       ├── uvm_va_space.c
+│       ├── uvm_va_space.h
+│       ├── uvm_va_space_mm.c
+│       ├── uvm_va_space_mm.h
+│       ├── uvm_volta.c
+│       ├── uvm_volta_access_counter_buffer.c
+│       ├── uvm_volta_ce.c
+│       ├── uvm_volta_fault_buffer.c
+│       ├── uvm_volta_fault_buffer.h
+│       ├── uvm_volta_host.c
+│       └── uvm_volta_mmu.c
+├── kernel-open
+│   ├── Kbuild
+│   ├── Makefile
+│   ├── common
+│   │   └── inc
+│   │       ├── conftest.h
+│   │       ├── cpuopsys.h
+│   │       ├── nv-caps.h
+│   │       ├── nv-chardev-numbers.h
+│   │       ├── nv-dmabuf.h
+│   │       ├── nv-firmware-registry.h
+│   │       ├── nv-firmware.h
+│   │       ├── nv-gpu-info.h
+│   │       ├── nv-hash.h
+│   │       ├── nv-hypervisor.h
+│   │       ├── nv-ioctl-numa.h
+│   │       ├── nv-ioctl-numbers.h
+│   │       ├── nv-ioctl.h
+│   │       ├── nv-kernel-interface-api.h
+│   │       ├── nv-kref.h
+│   │       ├── nv-kthread-q-os.h
+│   │       ├── nv-kthread-q.h
+│   │       ├── nv-linux.h
+│   │       ├── nv-list-helpers.h
+│   │       ├── nv-lock.h
+│   │       ├── nv-memdbg.h
+│   │       ├── nv-mm.h
+│   │       ├── nv-modeset-interface.h
+│   │       ├── nv-msi.h
+│   │       ├── nv-pci-types.h
+│   │       ├── nv-pci.h
+│   │       ├── nv-pgprot.h
+│   │       ├── nv-procfs-utils.h
+│   │       ├── nv-procfs.h
+│   │       ├── nv-proto.h
+│   │       ├── nv-retpoline.h
+│   │       ├── nv-time.h
+│   │       ├── nv-timer.h
+│   │       ├── nv.h
+│   │       ├── nvCpuUuid.h
+│   │       ├── nv_speculation_barrier.h
+│   │       ├── nv_stdarg.h
+│   │       ├── nv_uvm_interface.h
+│   │       ├── nv_uvm_types.h
+│   │       ├── nvgputypes.h
+│   │       ├── nvkms-api-types.h
+│   │       ├── nvkms-format.h
+│   │       ├── nvkms-kapi.h
+│   │       ├── nvlimits.h
+│   │       ├── nvmisc.h
+│   │       ├── nvstatus.h
+│   │       ├── nvstatuscodes.h
+│   │       ├── nvtypes.h
+│   │       ├── os
+│   │       │   └── nv_memory_type.h
+│   │       ├── os-interface.h
+│   │       └── rm-gpu-ops.h
+│   ├── conftest.sh
+│   ├── count-lines.mk
+│   ├── dkms.conf
+│   ├── header-presence-tests.mk
+│   ├── nvidia
+│   │   ├── detect-self-hosted.h
+│   │   ├── export_nvswitch.h
+│   │   ├── hal
+│   │   │   └── library
+│   │   │       └── cryptlib
+│   │   │           ├── cryptlib_aead.h
+│   │   │           ├── cryptlib_cert.h
+│   │   │           ├── cryptlib_dh.h
+│   │   │           ├── cryptlib_ec.h
+│   │   │           ├── cryptlib_ecd.h
+│   │   │           ├── cryptlib_hash.h
+│   │   │           ├── cryptlib_hkdf.h
+│   │   │           ├── cryptlib_mac.h
+│   │   │           ├── cryptlib_rng.h
+│   │   │           ├── cryptlib_rsa.h
+│   │   │           └── cryptlib_sm2.h
+│   │   ├── i2c_nvswitch.c
+│   │   ├── internal
+│   │   │   └── libspdm_lib_config.h
+│   │   ├── internal_crypt_lib.h
+│   │   ├── ioctl_common_nvswitch.h
+│   │   ├── ioctl_nvswitch.h
+│   │   ├── library
+│   │   │   ├── cryptlib.h
+│   │   │   └── spdm_lib_config.h
+│   │   ├── libspdm_aead.c
+│   │   ├── libspdm_aead_aes_gcm.c
+│   │   ├── libspdm_ec.c
+│   │   ├── libspdm_ecc.c
+│   │   ├── libspdm_hkdf.c
+│   │   ├── libspdm_hkdf_sha.c
+│   │   ├── libspdm_hmac_sha.c
+│   │   ├── libspdm_internal_crypt_lib.c
+│   │   ├── libspdm_rand.c
+│   │   ├── libspdm_rsa.c
+│   │   ├── libspdm_rsa_ext.c
+│   │   ├── libspdm_sha.c
+│   │   ├── libspdm_shash.c
+│   │   ├── libspdm_x509.c
+│   │   ├── linux_nvswitch.c
+│   │   ├── linux_nvswitch.h
+│   │   ├── nv-acpi.c
+│   │   ├── nv-caps-imex.c
+│   │   ├── nv-caps-imex.h
+│   │   ├── nv-caps.c
+│   │   ├── nv-cray.c
+│   │   ├── nv-dma.c
+│   │   ├── nv-dmabuf.c
+│   │   ├── nv-i2c.c
+│   │   ├── nv-ibmnpu.c
+│   │   ├── nv-ibmnpu.h
+│   │   ├── nv-kernel.o_binary
+│   │   ├── nv-kthread-q.c
+│   │   ├── nv-memdbg.c
+│   │   ├── nv-mmap.c
+│   │   ├── nv-modeset-interface.c
+│   │   ├── nv-msi.c
+│   │   ├── nv-nano-timer.c
+│   │   ├── nv-p2p.c
+│   │   ├── nv-p2p.h
+│   │   ├── nv-pat.c
+│   │   ├── nv-pat.h
+│   │   ├── nv-pci-table.c
+│   │   ├── nv-pci-table.h
+│   │   ├── nv-pci.c
+│   │   ├── nv-procfs.c
+│   │   ├── nv-reg.h
+│   │   ├── nv-report-err.c
+│   │   ├── nv-report-err.h
+│   │   ├── nv-rsync.c
+│   │   ├── nv-rsync.h
+│   │   ├── nv-usermap.c
+│   │   ├── nv-vm.c
+│   │   ├── nv-vtophys.c
+│   │   ├── nv.c
+│   │   ├── nv_gpu_ops.h
+│   │   ├── nv_uvm_interface.c
+│   │   ├── nvidia-sources.Kbuild
+│   │   ├── nvidia.Kbuild
+│   │   ├── nvlink_caps.c
+│   │   ├── nvlink_caps.h
+│   │   ├── nvlink_common.h
+│   │   ├── nvlink_errors.h
+│   │   ├── nvlink_export.h
+│   │   ├── nvlink_linux.c
+│   │   ├── nvlink_linux.h
+│   │   ├── nvlink_os.h
+│   │   ├── nvlink_pci.h
+│   │   ├── nvlink_proto.h
+│   │   ├── nvspdm_cryptlib_extensions.h
+│   │   ├── os-interface.c
+│   │   ├── os-mlock.c
+│   │   ├── os-pci.c
+│   │   ├── os-registry.c
+│   │   ├── os-usermap.c
+│   │   ├── procfs_nvswitch.c
+│   │   └── rmp2pdefines.h
+│   ├── nvidia-drm
+│   │   ├── nv-kthread-q.c
+│   │   ├── nv-pci-table.c
+│   │   ├── nv-pci-table.h
+│   │   ├── nvidia-dma-fence-helper.h
+│   │   ├── nvidia-dma-resv-helper.h
+│   │   ├── nvidia-drm-conftest.h
+│   │   ├── nvidia-drm-connector.c
+│   │   ├── nvidia-drm-connector.h
+│   │   ├── nvidia-drm-crtc.c
+│   │   ├── nvidia-drm-crtc.h
+│   │   ├── nvidia-drm-drv.c
+│   │   ├── nvidia-drm-drv.h
+│   │   ├── nvidia-drm-encoder.c
+│   │   ├── nvidia-drm-encoder.h
+│   │   ├── nvidia-drm-fb.c
+│   │   ├── nvidia-drm-fb.h
+│   │   ├── nvidia-drm-fence.c
+│   │   ├── nvidia-drm-fence.h
+│   │   ├── nvidia-drm-format.c
+│   │   ├── nvidia-drm-format.h
+│   │   ├── nvidia-drm-gem-dma-buf.c
+│   │   ├── nvidia-drm-gem-dma-buf.h
+│   │   ├── nvidia-drm-gem-nvkms-memory.c
+│   │   ├── nvidia-drm-gem-nvkms-memory.h
+│   │   ├── nvidia-drm-gem-user-memory.c
+│   │   ├── nvidia-drm-gem-user-memory.h
+│   │   ├── nvidia-drm-gem.c
+│   │   ├── nvidia-drm-gem.h
+│   │   ├── nvidia-drm-helper.c
+│   │   ├── nvidia-drm-helper.h
+│   │   ├── nvidia-drm-ioctl.h
+│   │   ├── nvidia-drm-linux.c
+│   │   ├── nvidia-drm-modeset.c
+│   │   ├── nvidia-drm-modeset.h
+│   │   ├── nvidia-drm-os-interface.c
+│   │   ├── nvidia-drm-os-interface.h
+│   │   ├── nvidia-drm-priv.h
+│   │   ├── nvidia-drm-sources.mk
+│   │   ├── nvidia-drm-utils.c
+│   │   ├── nvidia-drm-utils.h
+│   │   ├── nvidia-drm.Kbuild
+│   │   ├── nvidia-drm.c
+│   │   └── nvidia-drm.h
+│   ├── nvidia-modeset
+│   │   ├── nv-kthread-q.c
+│   │   ├── nv-modeset-kernel.o_binary
+│   │   ├── nvidia-modeset-linux.c
+│   │   ├── nvidia-modeset-os-interface.h
+│   │   ├── nvidia-modeset.Kbuild
+│   │   ├── nvkms-ioctl.h
+│   │   └── nvkms.h
+│   ├── nvidia-peermem
+│   │   ├── nv-p2p.h
+│   │   ├── nvidia-peermem.Kbuild
+│   │   ├── nvidia-peermem.c
+│   │   └── peer_mem.h
+│   └── nvidia-uvm
+│       ├── cla06fsubch.h
+│       ├── cla16f.h
+│       ├── clb069.h
+│       ├── clb06f.h
+│       ├── clb0b5.h
+│       ├── clc06f.h
+│       ├── clc076.h
+│       ├── clc0b5.h
+│       ├── clc1b5.h
+│       ├── clc365.h
+│       ├── clc369.h
+│       ├── clc36f.h
+│       ├── clc3b5.h
+│       ├── clc46f.h
+│       ├── clc56f.h
+│       ├── clc5b5.h
+│       ├── clc6b5.h
+│       ├── clc7b5.h
+│       ├── clc86f.h
+│       ├── clc8b5.h
+│       ├── clcba2.h
+│       ├── ctrl2080mc.h
+│       ├── hwref
+│       │   ├── ampere
+│       │   │   └── ga100
+│       │   │       ├── dev_fault.h
+│       │   │       └── dev_runlist.h
+│       │   ├── hopper
+│       │   │   └── gh100
+│       │   │       ├── dev_fault.h
+│       │   │       └── dev_mmu.h
+│       │   ├── maxwell
+│       │   │   └── gm107
+│       │   │       └── dev_mmu.h
+│       │   ├── pascal
+│       │   │   └── gp100
+│       │   │       ├── dev_fault.h
+│       │   │       ├── dev_fb.h
+│       │   │       └── dev_mmu.h
+│       │   ├── turing
+│       │   │   └── tu102
+│       │   │       ├── dev_fault.h
+│       │   │       └── dev_mmu.h
+│       │   └── volta
+│       │       └── gv100
+│       │           ├── dev_fault.h
+│       │           ├── dev_fb.h
+│       │           └── dev_mmu.h
+│       ├── nv-kthread-q-selftest.c
+│       ├── nv-kthread-q.c
+│       ├── nvCpuUuid.c
+│       ├── nvidia-uvm-sources.Kbuild
+│       ├── nvidia-uvm.Kbuild
+│       ├── nvstatus.c
+│       ├── uvm.c
+│       ├── uvm.h
+│       ├── uvm_ada.c
+│       ├── uvm_ada_fault_buffer.h
+│       ├── uvm_ampere.c
+│       ├── uvm_ampere_ce.c
+│       ├── uvm_ampere_fault_buffer.h
+│       ├── uvm_ampere_host.c
+│       ├── uvm_ampere_mmu.c
+│       ├── uvm_api.h
+│       ├── uvm_ats.c
+│       ├── uvm_ats.h
+│       ├── uvm_ats_faults.c
+│       ├── uvm_ats_faults.h
+│       ├── uvm_ats_ibm.c
+│       ├── uvm_ats_ibm.h
+│       ├── uvm_ats_sva.c
+│       ├── uvm_ats_sva.h
+│       ├── uvm_ce_test.c
+│       ├── uvm_channel.c
+│       ├── uvm_channel.h
+│       ├── uvm_channel_test.c
+│       ├── uvm_common.c
+│       ├── uvm_common.h
+│       ├── uvm_conf_computing.c
+│       ├── uvm_conf_computing.h
+│       ├── uvm_extern_decl.h
+│       ├── uvm_fault_buffer_flush_test.c
+│       ├── uvm_forward_decl.h
+│       ├── uvm_get_rm_ptes_test.c
+│       ├── uvm_global.c
+│       ├── uvm_global.h
+│       ├── uvm_gpu.c
+│       ├── uvm_gpu.h
+│       ├── uvm_gpu_access_counters.c
+│       ├── uvm_gpu_access_counters.h
+│       ├── uvm_gpu_isr.c
+│       ├── uvm_gpu_isr.h
+│       ├── uvm_gpu_non_replayable_faults.c
+│       ├── uvm_gpu_non_replayable_faults.h
+│       ├── uvm_gpu_replayable_faults.c
+│       ├── uvm_gpu_replayable_faults.h
+│       ├── uvm_gpu_semaphore.c
+│       ├── uvm_gpu_semaphore.h
+│       ├── uvm_gpu_semaphore_test.c
+│       ├── uvm_hal.c
+│       ├── uvm_hal.h
+│       ├── uvm_hal_types.h
+│       ├── uvm_hmm.c
+│       ├── uvm_hmm.h
+│       ├── uvm_hopper.c
+│       ├── uvm_hopper_ce.c
+│       ├── uvm_hopper_fault_buffer.c
+│       ├── uvm_hopper_fault_buffer.h
+│       ├── uvm_hopper_host.c
+│       ├── uvm_hopper_mmu.c
+│       ├── uvm_hopper_sec2.c
+│       ├── uvm_host_test.c
+│       ├── uvm_ioctl.h
+│       ├── uvm_kvmalloc.c
+│       ├── uvm_kvmalloc.h
+│       ├── uvm_kvmalloc_test.c
+│       ├── uvm_linux.c
+│       ├── uvm_linux.h
+│       ├── uvm_linux_ioctl.h
+│       ├── uvm_lock.c
+│       ├── uvm_lock.h
+│       ├── uvm_lock_test.c
+│       ├── uvm_map_external.c
+│       ├── uvm_map_external.h
+│       ├── uvm_maxwell.c
+│       ├── uvm_maxwell_access_counter_buffer.c
+│       ├── uvm_maxwell_ce.c
+│       ├── uvm_maxwell_fault_buffer.c
+│       ├── uvm_maxwell_host.c
+│       ├── uvm_maxwell_mmu.c
+│       ├── uvm_maxwell_sec2.c
+│       ├── uvm_mem.c
+│       ├── uvm_mem.h
+│       ├── uvm_mem_test.c
+│       ├── uvm_migrate.c
+│       ├── uvm_migrate.h
+│       ├── uvm_migrate_pageable.c
+│       ├── uvm_migrate_pageable.h
+│       ├── uvm_mmu.c
+│       ├── uvm_mmu.h
+│       ├── uvm_page_tree_test.c
+│       ├── uvm_pascal.c
+│       ├── uvm_pascal_ce.c
+│       ├── uvm_pascal_fault_buffer.c
+│       ├── uvm_pascal_fault_buffer.h
+│       ├── uvm_pascal_host.c
+│       ├── uvm_pascal_mmu.c
+│       ├── uvm_peer_identity_mappings_test.c
+│       ├── uvm_perf_events.c
+│       ├── uvm_perf_events.h
+│       ├── uvm_perf_events_test.c
+│       ├── uvm_perf_heuristics.c
+│       ├── uvm_perf_heuristics.h
+│       ├── uvm_perf_module.c
+│       ├── uvm_perf_module.h
+│       ├── uvm_perf_module_test.c
+│       ├── uvm_perf_prefetch.c
+│       ├── uvm_perf_prefetch.h
+│       ├── uvm_perf_thrashing.c
+│       ├── uvm_perf_thrashing.h
+│       ├── uvm_perf_utils.c
+│       ├── uvm_perf_utils.h
+│       ├── uvm_perf_utils_test.c
+│       ├── uvm_pmm_gpu.c
+│       ├── uvm_pmm_gpu.h
+│       ├── uvm_pmm_sysmem.c
+│       ├── uvm_pmm_sysmem.h
+│       ├── uvm_pmm_sysmem_test.c
+│       ├── uvm_pmm_test.c
+│       ├── uvm_policy.c
+│       ├── uvm_populate_pageable.c
+│       ├── uvm_populate_pageable.h
+│       ├── uvm_processors.c
+│       ├── uvm_processors.h
+│       ├── uvm_procfs.c
+│       ├── uvm_procfs.h
+│       ├── uvm_pte_batch.c
+│       ├── uvm_pte_batch.h
+│       ├── uvm_push.c
+│       ├── uvm_push.h
+│       ├── uvm_push_macros.h
+│       ├── uvm_push_test.c
+│       ├── uvm_pushbuffer.c
+│       ├── uvm_pushbuffer.h
+│       ├── uvm_range_allocator.c
+│       ├── uvm_range_allocator.h
+│       ├── uvm_range_allocator_test.c
+│       ├── uvm_range_group.c
+│       ├── uvm_range_group.h
+│       ├── uvm_range_group_tree_test.c
+│       ├── uvm_range_tree.c
+│       ├── uvm_range_tree.h
+│       ├── uvm_range_tree_test.c
+│       ├── uvm_rb_tree.c
+│       ├── uvm_rb_tree.h
+│       ├── uvm_rb_tree_test.c
+│       ├── uvm_rm_mem.c
+│       ├── uvm_rm_mem.h
+│       ├── uvm_rm_mem_test.c
+│       ├── uvm_sec2_test.c
+│       ├── uvm_test.c
+│       ├── uvm_test.h
+│       ├── uvm_test_ioctl.h
+│       ├── uvm_test_rng.c
+│       ├── uvm_test_rng.h
+│       ├── uvm_thread_context.c
+│       ├── uvm_thread_context.h
+│       ├── uvm_thread_context_test.c
+│       ├── uvm_tlb_batch.c
+│       ├── uvm_tlb_batch.h
+│       ├── uvm_tools.c
+│       ├── uvm_tools.h
+│       ├── uvm_tools_init.h
+│       ├── uvm_tracker.c
+│       ├── uvm_tracker.h
+│       ├── uvm_tracker_test.c
+│       ├── uvm_turing.c
+│       ├── uvm_turing_access_counter_buffer.c
+│       ├── uvm_turing_fault_buffer.c
+│       ├── uvm_turing_fault_buffer.h
+│       ├── uvm_turing_host.c
+│       ├── uvm_turing_mmu.c
+│       ├── uvm_types.h
+│       ├── uvm_unit_test.h
+│       ├── uvm_user_channel.c
+│       ├── uvm_user_channel.h
+│       ├── uvm_va_block.c
+│       ├── uvm_va_block.h
+│       ├── uvm_va_block_test.c
+│       ├── uvm_va_block_types.h
+│       ├── uvm_va_policy.c
+│       ├── uvm_va_policy.h
+│       ├── uvm_va_range.c
+│       ├── uvm_va_range.h
+│       ├── uvm_va_space.c
+│       ├── uvm_va_space.h
+│       ├── uvm_va_space_mm.c
+│       ├── uvm_va_space_mm.h
+│       ├── uvm_volta.c
+│       ├── uvm_volta_access_counter_buffer.c
+│       ├── uvm_volta_ce.c
+│       ├── uvm_volta_fault_buffer.c
+│       ├── uvm_volta_fault_buffer.h
+│       ├── uvm_volta_host.c
+│       └── uvm_volta_mmu.c
+├── libEGL.so.1.1.0
+├── libEGL.so.550.144.03
+├── libEGL_nvidia.so.550.144.03
+├── libGL.so.1.7.0
+├── libGLESv1_CM.so.1.2.0
+├── libGLESv1_CM_nvidia.so.550.144.03
+├── libGLESv2.so.2.1.0
+├── libGLESv2_nvidia.so.550.144.03
+├── libGLX.so.0
+├── libGLX_nvidia.so.550.144.03
+├── libGLdispatch.so.0
+├── libOpenCL.so.1.0.0
+├── libOpenGL.so.0
+├── libcuda.so.550.144.03
+├── libcudadebugger.so.550.144.03
+├── libglvnd_install_checker
+│   ├── check-libglvnd-install.sh
+│   ├── egl_dummy_vendor.json
+│   ├── glvnd_check
+│   └── libGLX_installcheck.so.0
+├── libglxserver_nvidia.so.550.144.03
+├── libnvcuvid.so.550.144.03
+├── libnvidia-allocator.so.550.144.03
+├── libnvidia-api.so.1
+├── libnvidia-cfg.so.550.144.03
+├── libnvidia-egl-gbm.so.1.1.1
+├── libnvidia-egl-wayland.so.1.1.13
+├── libnvidia-eglcore.so.550.144.03
+├── libnvidia-encode.so.550.144.03
+├── libnvidia-fbc.so.550.144.03
+├── libnvidia-glcore.so.550.144.03
+├── libnvidia-glsi.so.550.144.03
+├── libnvidia-glvkspirv.so.550.144.03
+├── libnvidia-gpucomp.so.550.144.03
+├── libnvidia-gtk2.so.550.144.03
+├── libnvidia-gtk3.so.550.144.03
+├── libnvidia-ml.so.550.144.03
+├── libnvidia-ngx.so.550.144.03
+├── libnvidia-nvvm.so.550.144.03
+├── libnvidia-opencl.so.550.144.03
+├── libnvidia-opticalflow.so.550.144.03
+├── libnvidia-pkcs11-openssl3.so.550.144.03
+├── libnvidia-pkcs11.so.550.144.03
+├── libnvidia-ptxjitcompiler.so.550.144.03
+├── libnvidia-rtcore.so.550.144.03
+├── libnvidia-tls.so.550.144.03
+├── libnvidia-wayland-client.so.550.144.03
+├── libnvoptix.so.550.144.03
+├── libvdpau_nvidia.so.550.144.03
+├── makeself-help-script.sh
+├── makeself.sh
+├── mkprecompiled
+├── nvidia-application-profiles-550.144.03-key-documentation
+├── nvidia-application-profiles-550.144.03-rc
+├── nvidia-bug-report.sh
+├── nvidia-cuda-mps-control
+├── nvidia-cuda-mps-control.1.gz
+├── nvidia-cuda-mps-server
+├── nvidia-dbus.conf
+├── nvidia-debugdump
+├── nvidia-drm-outputclass.conf
+├── nvidia-installer
+├── nvidia-installer.1.gz
+├── nvidia-modprobe
+├── nvidia-modprobe.1.gz
+├── nvidia-ngx-updater
+├── nvidia-persistenced
+├── nvidia-persistenced-init.tar.bz2
+├── nvidia-persistenced.1.gz
+├── nvidia-powerd
+├── nvidia-settings
+├── nvidia-settings.1.gz
+├── nvidia-settings.desktop
+├── nvidia-settings.png
+├── nvidia-smi
+├── nvidia-smi.1.gz
+├── nvidia-xconfig
+├── nvidia-xconfig.1.gz
+├── nvidia.icd
+├── nvidia_drv.so
+├── nvidia_icd.json
+├── nvidia_layers.json
+├── nvngx.dll
+├── nvoptix.bin
+├── pkg-history.txt
+├── supported-gpus
+│   ├── LICENSE
+│   └── supported-gpus.json
+└── systemd
+    ├── nvidia-sleep.sh
+    ├── system
+    │   ├── nvidia-hibernate.service
+    │   ├── nvidia-powerd.service
+    │   ├── nvidia-resume.service
+    │   └── nvidia-suspend.service
+    └── system-sleep
+        └── nvidia
+
+63 directories, 1064 files
